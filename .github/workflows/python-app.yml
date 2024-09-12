@@ -1,23 +1,20 @@
-name: Python CI
+name: Python application
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+on: [push]
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v2
 
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v2
       with:
-        python-version: '3.8'  # You can specify 3.8 or 3.10 depending on your requirements
+        python-version: '3.8'
 
     - name: Install dependencies
       run: |
